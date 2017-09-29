@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style>
+.info {
+	border: 5px dotted;
+	width: 600px;
+	height: 391px;
+	font-size: 30px;
+}
+
+
+.slideshow-container {
+  max-width: 400px;
+  position: relative;
+  margin: auto;
+  float: right;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+}
+@keyframes fade {
+	0% {opacity: 0;}
+	20% {opacity: 1;}
+	80% {opacity: 1;}
+	100% {opacity: 0;}
+}
+</style>
+
+<link href="styles.css" type="text/css" rel="stylesheet" />
+<title>Nivsite Home</title>
+</head>
+<body>
+
+<h2>NIVEN FRANCIS</h2>
+
+<div class="info">
+	<p><br>
+	Software engineer and programmer<br><br>
+	Passion for learning and developing<br><br>
+	Dedicated to helping others<br><br>
+	Proficient in Java, C, MIPS Assembly, UNIX, HTML, CSS, PHP, JavaScript
+	</p>
+</div>
+
+<div class="slideshow-container">
+
+	<div class="mySlides fade">
+	  <img src="media/profile/1.jpg" style="width:100%">
+	</div>
+	
+	<div class="mySlides fade">
+	  <img src="media/profile/2.jpg" style="width:100%">
+	</div>
+	
+	<div class="mySlides fade">
+	  <img src="media/profile/3.jpg" style="width:100%">
+	</div>
+
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 5000);
+}
+</script>
+
+</body>
+</html>

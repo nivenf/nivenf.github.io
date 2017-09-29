@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="styles.css" type="text/css" rel="stylesheet" />
+<title>Nivsite Media</title>
+</head>
+<body>
+
+<h2>Personal Projects</h2>
+
+
+
+<div class="parent">
+	<ul>
+		<li><a href="https://github.com/nivenf/bash-greetings" target="_blank" onmouseover="prev_1()">Bash-Greetings</a></li>
+		<li><a href="https://github.com/nivenf/Auto-Commenter/releases" target="_blank" onmouseover="prev_2()">Auto Commenter</a></li>
+		<li><a href="https://github.com/nivenf/hackaz_spring17" target="_blank" onmouseover="prev_3()">Check List</a></li>
+		<li><a href="https://www.youtube.com/user/Niven5111" target="_blank" onmouseover="prev_4()">YouTube Channel</a></li>
+		<li><a href="https://www.twitch.tv/niven5111" target="_blank" onmouseover="prev_5()">Twitch Stream</a></li>
+	</ul>
+</div>
+
+<div id="preview">
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+function prev_1() {
+	document.getElementById("preview").innerHTML = "<hr><img src=\"media/project_previews/bash_greetings.png\" width=\"400px\" height=\"auto\">";
+}
+
+function prev_2() {
+	document.getElementById("preview").innerHTML = "<hr><img src=\"media/pro	ject_previews/auto_commenter.png\" width=\"400px\" height=\"auto\">";
+}
+
+function prev_3() {
+	document.getElementById("preview").innerHTML = "<hr><img src=\"media/project_previews/check_list.png\" width=\"400px\" height=\"auto\">";
+}
+
+function prev_4() {
+	document.getElementById("preview").innerHTML = "<hr><img src=\"media/project_previews/youtube.png\" width=\"400px\" height=\"auto\">";
+}
+
+function prev_5() {
+	document.getElementById("preview").innerHTML = "<hr>";
+	document.getElementById("preview").innerHTML += "<iframe src=\"http://player.twitch.tv/?channel=niven5111&muted=true\" height=\"480\" width=\"856\"></iframe>";
+}
+</script>
+
+<!-- 
+ -->
+
+</body>
+</html>

@@ -1,1 +1,99 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="Cache-control" content="no-cache">
+<link href="styles.css" type="text/css" rel="stylesheet" />
+<title>Nivsite</title>
+</head>
+<body>
+
+<div id="home" class="home_container">
+	<div id="intro" class="fadein">
+	
+		<div class="h1">NIVEN FRANCIS
+	
+			<div class="enter" onclick="fadeout_main()">
+				&lt;<u>ENTER</u>&gt;
+			</div>
+		
+		</div>
+	
+	</div>
+	
+	<div class="fullscreen-bg">
+	    <video loop muted autoplay class="fullscreen-bg__video">
+	        <source src="media/background.mp4" type="video/mp4">
+	    </video>
+	</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+document.onkeydown = function() {
+	if (event.keyCode == 13 || event.keyCode == 32) {
+		fadeout_main();
+	}
+}
+
+function fadeout_main() {
+	document.getElementById("intro").style.animation = "fadeout 1s";
+	setTimeout(loadMain, 1000);
+}
+
+function loadMain() {
+	var toChange = document.getElementById("intro");
+	toChange.className = "container";
+	document.getElementById("intro").style.animation = "fadein_transparent 1s";
+	show_home();
+}
+
+function show_home() {
+	var toChange = document.getElementById("intro");
+	toChange.innerHTML = '<div class="header" onclick="show_home()"><b>HOME</b></div> | ';
+	toChange.innerHTML += '<div class="header" onclick="show_media()">MEDIA</div> | ';
+	toChange.innerHTML += '<div class="header" onclick="show_about()">ABOUT</div>';
+	toChange.innerHTML += '<br><hr>';
+	toChange.innerHTML += '<div id="inner" class="inner_text"></div>';
+	
+	document.getElementById("intro").style.opacity = 0.8;
+	document.title = "Nivsite Home";
+	
+	var toChange = document.getElementById("inner");
+	jQuery("#inner").load('WebContent/home.html');
+}
+
+function show_media() {
+	var toChange = document.getElementById("intro");
+	toChange.innerHTML = '<div class="header" onclick="show_home()">HOME</div> | ';
+	toChange.innerHTML += '<div class="header" onclick="show_media()"><b>MEDIA</b></div> | ';
+	toChange.innerHTML += '<div class="header" onclick="show_about()">ABOUT</div>';
+	toChange.innerHTML += '<br><hr>';
+	toChange.innerHTML += '<div id="inner" class="inner_text"></div>';
+	
+	document.getElementById("intro").style.opacity = 1;
+	document.title = "Nivsite Media";
+	
+	var toChange = document.getElementById("inner");
+	jQuery("#inner").load('WebContent/media.html');
+}
+
+function show_about() {
+	var toChange = document.getElementById("intro");
+	toChange.innerHTML = '<div class="header" onclick="show_home()">HOME</div> | ';
+	toChange.innerHTML += '<div class="header" onclick="show_media()">MEDIA</div> | ';
+	toChange.innerHTML += '<div class="header" onclick="show_about()"><b>ABOUT</b></div>';
+	toChange.innerHTML += '<br><hr>';
+	toChange.innerHTML += '<div id="inner" class="inner_text"></div>';
+	
+	document.getElementById("intro").style.opacity = 0.8;
+	document.title = "Nivsite About";
+	
+	var toChange = document.getElementById("inner");
+	jQuery("#inner").load('WebContent/about.html');
+}
+
+</script>
+
+</body>
+</html>

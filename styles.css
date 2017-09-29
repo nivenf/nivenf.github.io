@@ -1,0 +1,153 @@
+@CHARSET "ISO-8859-1";
+
+#background {
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    left: 0px; 
+    top: 0px; 
+    z-index: -1; /* Ensure div tag stays behind content; -999 might work, too. */
+}
+
+.stretch {
+    width:100%;
+    height:100%;
+}
+
+.h1 {
+	padding-top: 150px;
+	text-align: center;
+	font-family:Arial, Helvetica, sans-serif;
+	color: #eaeaea;
+	font-size: 180pt;
+	font-weight: bold;
+}
+
+.enter {
+	text-align: center;	
+	font-family:Arial, Helvetica, sans-serif;
+	color: #e8e8e8;
+	font-size: 50pt;
+	height: 10px;
+	animation: fading 3s infinite;
+	font-weight: normal;
+	cursor:pointer;
+}
+
+.fadein {
+	animation: fadein 1s;
+}
+
+.li {
+	color:red;
+}
+
+img.top {
+    float:right;
+}
+
+.info {
+	float: left;
+}
+
+@keyframes fading {
+	0%{opacity:0}
+	50%{opacity:1}
+	100%{opacity:0}
+}
+
+@keyframes fadein_transparent {
+	from {opacity:0} to {opacity:0.8}
+}
+
+@keyframes fadein {
+	from {opacity:0} to {opacity:1}
+}
+
+@keyframes fadeout {
+	from {opactiy:1} to {opacity:0}
+}
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.parent {
+	text-align: center;
+	font-family: Courier New;
+}
+
+.parent > ul {
+	display: inline-block;
+}
+
+ul {
+	text-decoration: none;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: inherit; /* blue colors for links too */
+	text-decoration: inherit; /* no underline */
+}
+
+.inner_text {
+	color: black;
+	margin: auto;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.header {
+	display: inline;
+	cursor: pointer;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.container {
+	overflow: hidden;
+	margin: auto;
+	border: 5px rgba(255, 255, 255, .5);
+	background-color: #f2f2f2;
+	opacity: 0.8;
+	padding: 20px;
+    border-width: 5px;
+    width: 1060px;
+    text-align: center;
+    font-family: Monospace;
+    font-size: 20px;
+}
+
+.home_container {
+    width: 1060px;
+    margin: auto;
+}
