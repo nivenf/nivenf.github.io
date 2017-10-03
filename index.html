@@ -30,6 +30,10 @@
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+	  setTimeout(fadeout_main(), 10000);
+});
+
 document.onkeydown = function() {
 	if (event.keyCode == 13 || event.keyCode == 32) {
 		fadeout_main();
