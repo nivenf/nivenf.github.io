@@ -15,18 +15,18 @@
 			<div id="niven" class="names">NIVEN</div> <div id="francis" class="names">FRANCIS</div>
 	
 			<div id="enter" class="enter" onclick="fadeout_main()">
-				<span style='border:5px white solid;'>&nbspENTER&nbsp</span>
+				<span style='border:5px #D3D3D3 solid;'>&nbspENTER&nbsp</span>
 			</div>
 		
 		</div>
 	
 	</div>
 	
-	<div class="fullscreen-bg">
+<!--<div class="fullscreen-bg">
 	    <video loop muted autoplay class="fullscreen-bg__video">
 	        <source src="media/background.mp4" type="video/mp4">
 	    </video>
-	</div>
+	</div>-->
 </div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -47,18 +47,20 @@ $(document).ready(function() {
 });
 
 $(document).bind('mousemove', function(e){
-    $('#enter').css({
-        left: -0.1 * e.pageX + window.innerWidth/2 - 55,
-        top: -0.1 * e.pageY + window.innerHeight/2 + 300
-    });
-    $('#niven').css({
-        left: -0.02 * e.pageX + window.innerWidth/2 - 330,
-        top: -0.02 * e.pageY + window.innerHeight/2 - 350
-    });
-    $('#francis').css({
-        left: -0.04 * e.pageX + window.innerWidth/2 - 470,
-        top: -0.04 * e.pageY + window.innerHeight/2 - 100
-    });
+	if(!detectmob()) {
+	    $('#enter').css({
+	        left: -0.1 * e.pageX + window.innerWidth/2 - 55,
+	        top: -0.1 * e.pageY + window.innerHeight/2 + 300
+	    });
+	    $('#niven').css({
+	        left: -0.02 * e.pageX + window.innerWidth/2 - 330,
+	        top: -0.02 * e.pageY + window.innerHeight/2 - 350
+	    });
+	    $('#francis').css({
+	        left: -0.04 * e.pageX + window.innerWidth/2 - 470,
+	        top: -0.04 * e.pageY + window.innerHeight/2 - 100
+	    });
+	}
 });
 
 document.onkeydown = function() {
@@ -102,7 +104,7 @@ function show_media() {
 	toChange.innerHTML += '<br><hr>';
 	toChange.innerHTML += '<div id="inner" class="inner_text"></div>';
 	
-	document.getElementById("intro").style.opacity = 1;
+	document.getElementById("intro").style.opacity = 0.8;
 	document.title = "Nivsite Media";
 	
 	var toChange = document.getElementById("inner");
@@ -122,6 +124,22 @@ function show_about() {
 	
 	var toChange = document.getElementById("inner");
 	jQuery("#inner").load('WebContent/about.html');
+}
+
+function detectmob() { 
+	 if( navigator.userAgent.match(/Android/i)
+	 || navigator.userAgent.match(/webOS/i)
+	 || navigator.userAgent.match(/iPhone/i)
+	 || navigator.userAgent.match(/iPad/i)
+	 || navigator.userAgent.match(/iPod/i)
+	 || navigator.userAgent.match(/BlackBerry/i)
+	 || navigator.userAgent.match(/Windows Phone/i)
+	 ){
+	    return true;
+	  }
+	 else {
+	    return false;
+	  }
 }
 
 </script>
