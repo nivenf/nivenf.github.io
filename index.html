@@ -48,6 +48,8 @@ $(document).ready(function() {
     if(detectmob()) {
 	    if (window.DeviceOrientationEvent) {
 	    	var enter   = document.querySelector('.enter');
+	    	var niven   = document.querySelector('.niven');
+	    	var francis   = document.querySelector('.francis');
 
 	    	function handleOrientation(event) {
 	    	  var x = event.beta;  // In degree in the range [-180,180]
@@ -65,8 +67,14 @@ $(document).ready(function() {
 
 	    	  // 10 is half the size of the ball
 	    	  // It center the positioning point to the center of the ball
-	    	  enter.style.top  = (window.innerWidth*x/180 + 400) + "px";
+	    	  enter.style.top  = (window.innerWidth*x/180 + 430) + "px";
 	    	  enter.style.left = (window.innerHeight*y/180 - 370) + "px";
+	    	  
+	    	  niven.style.top  = (window.innerWidth*x/180 + 360) + "px";
+	    	  niven.style.left = (window.innerHeight*y/180 - 370) + "px";
+	    	  
+	    	  francis.style.top  = (window.innerWidth*x/180 + 390) + "px";
+	    	  francis.style.left = (window.innerHeight*y/180 - 370) + "px";
 	    	}
 
 	    	window.addEventListener('deviceorientation', handleOrientation);
