@@ -130,6 +130,13 @@ a {
 	cursor: pointer;
 }
 
+.header_mobile {
+	display: inline;
+	cursor: pointer;
+	font-size: 50px;
+	padding: 20px;
+}
+
 @media (min-aspect-ratio: 16/9) {
   .fullscreen-bg__video {
     width: 100%;

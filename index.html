@@ -83,9 +83,16 @@ function loadMain() {
 
 function show_home() {
 	var toChange = document.getElementById("intro");
-	toChange.innerHTML = '<div class="header" onclick="show_home()"><b>HOME</b></div> | ';
-	toChange.innerHTML += '<div class="header" onclick="show_media()">MEDIA</div> | ';
-	toChange.innerHTML += '<div class="header" onclick="show_about()">ABOUT</div>';
+	if(detectmob()) {
+		toChange.innerHTML = '<div class="header_mobile" onclick="show_home()"><b>HOME</b></div> | ';
+		toChange.innerHTML += '<div class="header_mobile" onclick="show_media()">MEDIA</div> | ';
+		toChange.innerHTML += '<div class="header_mobile" onclick="show_about()">ABOUT</div>';
+	}
+	else if(!detectmob()) {
+		toChange.innerHTML = '<div class="header" onclick="show_home()"><b>HOME</b></div> | ';
+		toChange.innerHTML += '<div class="header" onclick="show_media()">MEDIA</div> | ';
+		toChange.innerHTML += '<div class="header" onclick="show_about()">ABOUT</div>';
+	}
 	toChange.innerHTML += '<br><hr>';
 	toChange.innerHTML += '<div id="inner" class="inner_text"></div>';
 	
@@ -98,9 +105,16 @@ function show_home() {
 
 function show_media() {
 	var toChange = document.getElementById("intro");
-	toChange.innerHTML = '<div class="header" onclick="show_home()">HOME</div> | ';
-	toChange.innerHTML += '<div class="header" onclick="show_media()"><b>MEDIA</b></div> | ';
-	toChange.innerHTML += '<div class="header" onclick="show_about()">ABOUT</div>';
+	if(detectmob()) {
+	toChange.innerHTML = '<div class="header_mobile" onclick="show_home()">HOME</div> | ';
+	toChange.innerHTML += '<div class="header_mobile" onclick="show_media()"><b>MEDIA</b></div> | ';
+	toChange.innerHTML += '<div class="header_mobile" onclick="show_about()">ABOUT</div>';
+	}
+	else if(!detectmob()) {
+		toChange.innerHTML = '<div class="header" onclick="show_home()">HOME</div> | ';
+		toChange.innerHTML += '<div class="header" onclick="show_media()"><b>MEDIA</b></div> | ';
+		toChange.innerHTML += '<div class="header" onclick="show_about()">ABOUT</div>';
+	}
 	toChange.innerHTML += '<br><hr>';
 	toChange.innerHTML += '<div id="inner" class="inner_text"></div>';
 	
@@ -113,9 +127,17 @@ function show_media() {
 
 function show_about() {
 	var toChange = document.getElementById("intro");
-	toChange.innerHTML = '<div class="header" onclick="show_home()">HOME</div> | ';
-	toChange.innerHTML += '<div class="header" onclick="show_media()">MEDIA</div> | ';
-	toChange.innerHTML += '<div class="header" onclick="show_about()"><b>ABOUT</b></div>';
+	if(detectmob()) {
+		toChange.innerHTML = '<div class="header_mobile" onclick="show_home()">HOME</div> | ';
+		toChange.innerHTML += '<div class="header_mobile" onclick="show_media()">MEDIA</div> | ';
+		toChange.innerHTML += '<div class="header_mobile" onclick="show_about()"><b>ABOUT</b></div>';
+	}
+	else if(!detectmob()) {
+		toChange.innerHTML = '<div class="header" onclick="show_home()">HOME</div> | ';
+		toChange.innerHTML += '<div class="header" onclick="show_media()">MEDIA</div> | ';
+		toChange.innerHTML += '<div class="header" onclick="show_about()"><b>ABOUT</b></div>';
+	
+	}
 	toChange.innerHTML += '<br><hr>';
 	toChange.innerHTML += '<div id="inner" class="inner_text"></div>';
 	
