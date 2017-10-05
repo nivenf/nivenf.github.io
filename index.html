@@ -8,12 +8,6 @@
 </head>
 <body>
 
-<div class="garden">
-  <div class="ball"></div>
-</div>
-
-<pre class="output"></pre>
-
 <div id="home" class="home_container">
 	<div id="intro" class="fadein">
 	
@@ -53,9 +47,9 @@ $(document).ready(function() {
     
     if(detectmob()) {
 	    if (window.DeviceOrientationEvent) {
-	    	var ball   = document.querySelector('.ball');
-	    	var garden = document.querySelector('.garden');
-	    	var output = document.querySelector('.output');
+	    	var enter   = document.getElementById("#enter");
+	    	var niven = document.getElementById("#niven");
+	    	var francis = document.getElementById("#francis");
 
 	    	var maxX = garden.clientWidth  - ball.clientWidth;
 	    	var maxY = garden.clientHeight - ball.clientHeight;
@@ -79,8 +73,8 @@ $(document).ready(function() {
 
 	    	  // 10 is half the size of the ball
 	    	  // It center the positioning point to the center of the ball
-	    	  ball.style.top  = (maxX*x/180 - 10) + "px";
-	    	  ball.style.left = (maxY*y/180 - 10) + "px";
+	    	  enter.style.top  = (maxX*x/180 - 10) + "px";
+	    	  enter.style.left = (maxY*y/180 - 10) + "px";
 	    	}
 
 	    	window.addEventListener('deviceorientation', handleOrientation);
