@@ -11,10 +11,11 @@
 <div id="home" class="home_container">
 	<div id="intro" class="fadein">
 	
-		<div class="h1">NIVEN FRANCIS
+		<div class="h1">
+			<div id="niven" class="names">NIVEN</div> <div id="francis" class="names">FRANCIS</div>
 	
-			<div class="enter" onclick="fadeout_main()">
-				&lt;<u>ENTER</u>&gt;
+			<div id="enter" class="enter" onclick="fadeout_main()">
+				<span style='border:5px white solid;'>&nbspENTER&nbsp</span>
 			</div>
 		
 		</div>
@@ -30,6 +31,36 @@
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script>
+$(document).ready(function() {
+	$('#enter').css({
+        left: -0.1 * 850 + window.innerWidth/2 - 55,
+        top: -0.1 * 400 + window.innerHeight/2 + 300
+    });
+    $('#niven').css({
+        left: -0.02 * 850 + window.innerWidth/2 - 330,
+        top: -0.02 * 400 + window.innerHeight/2 - 350
+    });
+    $('#francis').css({
+        left: -0.04 * 850 + window.innerWidth/2 - 470,
+        top: -0.04 * 400 + window.innerHeight/2 - 100
+    });
+});
+
+$(document).bind('mousemove', function(e){
+    $('#enter').css({
+        left: -0.1 * e.pageX + window.innerWidth/2 - 55,
+        top: -0.1 * e.pageY + window.innerHeight/2 + 300
+    });
+    $('#niven').css({
+        left: -0.02 * e.pageX + window.innerWidth/2 - 330,
+        top: -0.02 * e.pageY + window.innerHeight/2 - 350
+    });
+    $('#francis').css({
+        left: -0.04 * e.pageX + window.innerWidth/2 - 470,
+        top: -0.04 * e.pageY + window.innerHeight/2 - 100
+    });
+});
+
 document.onkeydown = function() {
 	if (event.keyCode == 13 || event.keyCode == 32) {
 		fadeout_main();
@@ -38,7 +69,7 @@ document.onkeydown = function() {
 
 function fadeout_main() {
 	document.getElementById("intro").style.animation = "fadeout 1s";
-	setTimeout(loadMain, 1000);
+	setTimeout(loadMain, 900);
 }
 
 function loadMain() {

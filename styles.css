@@ -17,19 +17,24 @@
 .h1 {
 	padding-top: 150px;
 	text-align: center;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:Helvetica;
 	color: #eaeaea;
 	font-size: 180pt;
 	font-weight: bold;
 }
 
+.names {
+	position: absolute;
+}
+
 .enter {
+	position: absolute;
 	text-align: center;	
 	font-family:Arial, Helvetica, sans-serif;
 	color: #e8e8e8;
 	font-size: 50pt;
 	height: 10px;
-	animation: fading 3s infinite;
+	/*animation: fading 3s infinite;*/
 	font-weight: normal;
 	cursor:pointer;
 }
