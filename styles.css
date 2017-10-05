@@ -29,12 +29,12 @@ body {
 }
 
 .names {
-	color: #D3D3D3;
+	color: #ffffff;
 	position: absolute;
 }
 
 .enter {
-	color: #D3D3D3;
+	color: #ffffff;
 	position: absolute;
 	text-align: center;	
 	font-family:Arial, Helvetica, sans-serif;
@@ -149,7 +149,7 @@ a {
 	margin: auto;
 	border: 5px rgba(255, 255, 255, .5);
 	background-color: #f2f2f2;
-	opacity: 0.5;
+	opacity: 0.8;
 	padding: 20px;
     border-width: 5px;
     width: 1060px;
