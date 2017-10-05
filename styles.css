@@ -29,6 +29,7 @@ body {
 }
 
 .names {
+	font-size: 180pt;
 	color: #ffffff;
 	position: absolute;
 }

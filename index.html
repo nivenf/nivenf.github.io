@@ -47,7 +47,13 @@ $(document).ready(function() {
     
     if(detectmob()) {
 	    if (window.DeviceOrientationEvent) {
-	    	var enter   = document.querySelector('.names');
+	    	var niven = document.getElementById("niven");
+	    	niven.style.fontSize = "100pt";
+	    	
+	    	var francis = document.getElementById("francis");
+	    	francis.style.fontSize = "100pt";
+	    	
+	    	var enter = document.getElementById("enter");
 
 	    	function handleOrientation(event) {
 	    	  var x = event.beta;  // In degree in the range [-180,180]
@@ -65,6 +71,12 @@ $(document).ready(function() {
 
 	    	  // 10 is half the size of the ball
 	    	  // It center the positioning point to the center of the ball
+	    	  niven.style.top  = (window.innerWidth*x/180 + 430) + "px";
+	    	  niven.style.left = (window.innerHeight*y/180 - 370) + "px";
+	    	  
+	    	  francis.style.top  = (window.innerWidth*x/180 + 430) + "px";
+	    	  francis.style.left = (window.innerHeight*y/180 - 370) + "px";
+	    	  
 	    	  enter.style.top  = (window.innerWidth*x/180 + 430) + "px";
 	    	  enter.style.left = (window.innerHeight*y/180 - 370) + "px";
 	    	}
