@@ -44,6 +44,40 @@ $(document).ready(function() {
         left: -0.04 * 850 + window.innerWidth/2 - 470,
         top: -0.04 * 400 + window.innerHeight/2 - 100
     });
+    
+    if(detectmob()) {
+	    if (window.DeviceOrientationEvent) {
+	    	function handleOrientation(event) {
+				var x = event.beta;  // In degree in the range [-180,180]
+				var y = event.gamma; // In degree in the range [-90,90]
+					
+				// Because we don't want to have the device upside down
+				// We constrain the x value to the range [-90,90]
+				if (x >  90) { x =  90};
+				if (x < -90) { x = -90};
+					
+				// To make computation easier we shift the range of 
+				// x and y to [0,180]
+				x += 90;
+				y += 90;
+		
+			    $('#enter').css({
+			        left: -0.1 * x + window.innerWidth/2 - 55,
+			        top: -0.1 * y + window.innerHeight/2 + 300
+			    });
+			    $('#niven').css({
+			        left: -0.02 * x + window.innerWidth/2 - 330,
+			        top: -0.02 * y + window.innerHeight/2 - 350
+			    });
+			    $('#francis').css({
+			        left: -0.04 * x + window.innerWidth/2 - 470,
+			        top: -0.04 * y + window.innerHeight/2 - 100
+			    });
+			}
+	
+			window.addEventListener('deviceorientation', handleOrientation);
+	    }
+    }
 });
 
 $(document).bind('mousemove', function(e){
