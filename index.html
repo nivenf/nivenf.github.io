@@ -65,8 +65,8 @@ $(document).ready(function() {
 
 	    	  // 10 is half the size of the ball
 	    	  // It center the positioning point to the center of the ball
-	    	  enter.style.top  = (window.innerWidth*x/180 + 300) + "px";
-	    	  enter.style.left = (window.innerHeight*y/180 - 400) + "px";
+	    	  enter.style.top  = (0.1 * window.innerWidth*x/180 + 400) + "px";
+	    	  enter.style.left = (0.1 * window.innerHeight*y/180 - 350) + "px";
 	    	}
 
 	    	window.addEventListener('deviceorientation', handleOrientation);
