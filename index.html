@@ -24,27 +24,136 @@
 <meta name="msapplication-TileImage" content="media/icons/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+<style type="text/css">
+	html, body {
+		height: 100%;
+		margin: 0;
+	}
+
+	#wrapper {
+		min-height: 100%;
+	}
+</style>
+
 </head>
 <body>
 
 <div id="home" class="home_container">
-	<div id="intro" class="fadein">
+	<!-- INNER -->
+	<div class="inner">
+		<svg class="c" width="340" height="340" viewBox="0 0 120 120">
+        	<circle class="c4r" cx="60" cy="60" r="54" fill="none" stroke="gray" stroke-width=".1" />
+  		</svg>
+	</div>
+	<div class="inner">
+		<svg class="c" width="300" height="300" viewBox="0 0 120 120">
+        	<circle class="c3" cx="60" cy="60" r="54" fill="none" stroke="gray" stroke-width=".1"  />
+  		</svg>
+	</div>
+		<div class="inner">
+		<svg  width="215" height="215" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" >
+        	<rect width="300" height = "300" stroke-width="1" stroke="gray" fill-opacity="0" />
+        		<animate attributeType="XML" attributeName="opacity" from="0" to="1" dur="1s" />
+				<animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 0 0" to="360 0 0" dur="60s" repeatCount="indefinite"/>
+  		</svg>
+	</div>
 	
+	<div class="inner">
+		<svg id="satellite1" height="400" width="400">				
+			<animate attributeType="XML" attributeName="opacity" from="0" to="1" dur="3s" />
+			<animateTransform attributeType="xml" attributeName="transform" type="rotate" values="0 0 0; -360 0 0" dur="100s" additive="sum" repeatCount="indefinite" />
+		</svg>
+		<script type="text/javascript">
+			function drawCircle(cx, cy, r) {
+				var svgCircle = document.createElementNS('http://www.w3.org/2000/svg', "circle");
+				svgCircle.setAttributeNS(null, "cx", cx);
+				svgCircle.setAttributeNS(null, "cy", cy);
+				svgCircle.setAttributeNS(null, "r", r);
+				svgCircle.setAttributeNS(null, "stroke", 'gray')
+				svgCircle.setAttributeNS(null, "fill", 'transparent')
+				return svgCircle;
+			}
+			function polarToCartesian(center_x, center_y, radius, angle_in_degrees) {
+				var return_value = {}
+				var angle_in_radians = angle_in_degrees * Math.PI / 180.0;
+				return_value.x = center_x + radius * Math.cos(angle_in_radians);
+				return_value.y = center_y + radius * Math.sin(angle_in_radians);
+				return return_value;
+			}
+			/*  ==============================
+			 Loop to Draw Satellite circles
+			 ==============================  */
+			//  The center is the same for all circles
+			var cx = 200
+			var cy = 200
+			var radius_of_satellites_from_center = 144
+			var radius_of_small_circles = 5
+			var number_of_satellite_circles = 4
+			//  The angle increments for each circle drawn
+			for (var n = 0; n < number_of_satellite_circles; n++) {
+				//  Find how many degrees separate each circle
+				var degrees_of_separation = 360 / number_of_satellite_circles
+				var angle_as_degrees = degrees_of_separation * n
+				var coordinates = polarToCartesian(cx, cy, radius_of_satellites_from_center, angle_as_degrees)
+				document.getElementById('satellite1').appendChild(drawCircle(coordinates.x, coordinates.y, radius_of_small_circles))
+			}
+		</script>
+	</div>
+
+
+		<!-- LEFT -->
+	<div class="left">
+		<svg class="c" width="800" height="800" viewBox="0 0 120 120">
+        	<circle class="c6" cx="60" cy="60" r="54" fill="none" stroke="gray" stroke-width=".1" />
+  		</svg>
+	</div>
+	<div class="left">
+		<svg width="810" height="810" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<g id="seed" transform="translate(144,144)" stroke-width=".1" stroke="lightgray" fill="none" >
+				<circle cx="0" r="64" />
+				<circle cx="64" r="64" />
+				<circle cx="64" r="64" transform="rotate(60)" />
+				<circle cx="64" r="64" transform="rotate(120)" />
+				<circle cx="64" r="64" transform="rotate(180)" />
+				<circle cx="64" r="64" transform="rotate(240)" />
+				<circle cx="64" r="64" transform="rotate(300)" />
+				<circle cx="0" r="128" />
+				<animate attributeType="XML" attributeName="opacity" from="0" to="1" dur="3s" />
+				<animateTransform attributeType="xml" attributeName="transform" type="rotate" values="0 0 0; -360 0 0" dur="100s" additive="sum" repeatCount="indefinite" />
+			</g>
+		</svg>
+	</div>
+	
+	<!-- RIGHT -->
+	<div class="right">
+		<svg class="cr" width="800" height="800" viewBox="0 0 120 120">
+        	<circle class="c6" cx="60" cy="60" r="54" fill="none" stroke="gray" stroke-width=".1" />
+  		</svg>
+	</div>
+	<div class="right">
+		<svg width="810" height="810" viewBox="0 0 288 288" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<g id="seed" transform="translate(144,144)" stroke-width=".1" stroke="lightgray" fill="none" >
+				<circle cx="0" r="64" />
+				<circle cx="64" r="64" />
+				<circle cx="64" r="64" transform="rotate(60)" />
+				<circle cx="64" r="64" transform="rotate(120)" />
+				<circle cx="64" r="64" transform="rotate(180)" />
+				<circle cx="64" r="64" transform="rotate(240)" />
+				<circle cx="64" r="64" transform="rotate(300)" />
+				<circle cx="0" r="128" />
+				<animate attributeType="XML" attributeName="opacity" from="0" to="1" dur="3s" />
+				<animateTransform attributeType="xml" attributeName="transform" type="rotate" values="0 0 0; -360 0 0" dur="100s" additive="sum" repeatCount="indefinite" />
+			</g>
+		</svg>
+	</div>
+
+	<div id="intro" class="fadein">
 		<div class="h1">
 			<div id="niven" class="names">NIVEN</div> <div id="francis" class="names">FRANCIS</div>
-	
 			<div id="enter" class="enter" onclick="fadeout_main()">
 				<span style='border:5px #D3D3D3 solid;'>&nbspENTER&nbsp</span>
 			</div>
-		
 		</div>
-	
-	</div>
-	
-<div class="fullscreen-bg">
-	    <video loop muted autoplay class="fullscreen-bg__video">
-	        <source src="media/background.mp4" type="video/mp4">
-	    </video>
 	</div>
 </div>
 

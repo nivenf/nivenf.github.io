@@ -1,8 +1,8 @@
 @CHARSET "ISO-8859-1";
 
+
 body {
-	background-image: url("media/background.png");
-	background-color: black;
+	background: radial-gradient(#2D2D46, black);
 }
 
 #background {
@@ -30,12 +30,12 @@ body {
 
 .names {
 	font-size: 180pt;
-	color: #ffffff;
+	color: lightgray;
 	position: absolute;
 }
 
 .enter {
-	color: #ffffff;
+	color: lightgray;
 	position: absolute;
 	text-align: center;	
 	font-family:Arial, Helvetica, sans-serif;
@@ -47,7 +47,7 @@ body {
 }
 
 .fadein {
-	animation: fadein 1s;
+	animation: fadein 5s;
 }
 
 .li {
@@ -69,7 +69,7 @@ img.top {
 }
 
 @keyframes fadein_transparent {
-	from {opacity:0} to {opacity:0.8}
+	from {opacity:0} to {opacity:1}
 }
 
 @keyframes fadein {
@@ -79,25 +79,6 @@ img.top {
 @keyframes fadeout {
 	from {opactiy:1} to {opacity:0}
 }
-
-.fullscreen-bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
-}
-
-.fullscreen-bg__video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 
 .parent {
 	text-align: center;
@@ -170,3 +151,48 @@ a {
     width: 1060px;
     margin: auto;
 }
+
+.inner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.left {
+    position: fixed;
+    top: 50%;
+    left: -5%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.right {
+    position: fixed;
+    top: 50%;
+    left: 105%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.c { transform: rotate(-90deg); }
+.cr { transform: rotate(90deg); }
+@keyframes dash { from { transform: rotate(45deg); } to { transform: rotate(360deg); } }
+
+.c1 { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: fw 1s alternate; -webkit-animation-fill-mode: forwards; }
+.c2 { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: fw 1.5s alternate; -webkit-animation-fill-mode: forwards; }
+.c3 { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: fw 2s alternate; -webkit-animation-fill-mode: forwards; }
+.c4 { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: fw 2.5s alternate; -webkit-animation-fill-mode: forwards; }
+.c5 { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: fw 3s alternate; -webkit-animation-fill-mode: forwards; }
+.c6 { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: fw 4.5s alternate; -webkit-animation-fill-mode: forwards; }
+
+.c1r { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: bw 1s alternate; -webkit-animation-fill-mode: forwards; }
+.c2r { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: bw 1.5s alternate; -webkit-animation-fill-mode: forwards; }
+.c3r { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: bw 2s alternate; -webkit-animation-fill-mode: forwards; }
+.c4r { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: bw 2.5s alternate; -webkit-animation-fill-mode: forwards; }
+.c5r { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: bw 3s alternate; -webkit-animation-fill-mode: forwards; }
+.c6r { stroke-dasharray: 339.292; stroke-dashoffset: 339.292; animation: bw 4.5s alternate; -webkit-animation-fill-mode: forwards; }
+
+@keyframes fw { from { stroke-dashoffset: 339.292; } to { stroke-dashoffset: 0; } }
+@keyframes bw { from { stroke-dashoffset: -339.292; } to { stroke-dashoffset: 0; } }
