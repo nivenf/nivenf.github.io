@@ -83,3 +83,85 @@ h4 {
 	height: 80px;
 	width: 80px;
 }
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating_alt {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+.crucible_rot {
+  -webkit-animation: rotating 120s linear infinite;
+  -moz-animation: rotating 120s linear infinite;
+  -ms-animation: rotating 120s linear infinite;
+  -o-animation: rotating 120s linear infinite;
+  animation: rotating 120s linear infinite;
+}
+
+.strikes_rot {
+  -webkit-animation: rotating_alt 60s ease infinite;
+  -moz-animation: rotating_alt 60s ease infinite;
+  -ms-animation: rotating_alt 60s ease infinite;
+  -o-animation: rotating_alt 60s ease infinite;
+  animation: rotating_alt 60s ease infinite;
+}
+
+.nessus_rot {
+  -webkit-animation: rotating_alt 140s linear infinite;
+  -moz-animation: rotating_alt 140s linear infinite;
+  -ms-animation: rotating_alt 140s linear infinite;
+  -o-animation: rotating_alt 140s linear infinite;
+  animation: rotating_alt 140s linear infinite;
+}
+
+.nessus_rot2 {
+  -webkit-animation: rotating 120s linear infinite;
+  -moz-animation: rotating 120s linear infinite;
+  -ms-animation: rotating 120s linear infinite;
+  -o-animation: rotating 120s linear infinite;
+  animation: rotating 120s linear infinite;
+}
+
+.io_rot {
+  -webkit-animation: rotating 200s linear infinite;
+  -moz-animation: rotating 200s linear infinite;
+  -ms-animation: rotating 200s linear infinite;
+  -o-animation: rotating 200s linear infinite;
+  animation: rotating 200s linear infinite;
+}
+
+.mars_rot {
+  -webkit-animation: rotating_alt 200s linear infinite;
+  -moz-animation: rotating_alt 200s linear infinite;
+  -ms-animation: rotating_alt 200s linear infinite;
+  -o-animation: rotating_alt 200s linear infinite;
+  animation: rotating_alt 200s linear infinite;
+}
